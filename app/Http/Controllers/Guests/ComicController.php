@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Guests;
 
+use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
