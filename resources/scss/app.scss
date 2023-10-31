@@ -1,1 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-height: 414px;
+}

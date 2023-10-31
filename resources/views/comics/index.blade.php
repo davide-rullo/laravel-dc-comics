@@ -10,6 +10,14 @@
 </head>
 
 <body>
+    <header>
+        <nav class="nav justify-content-center  ">
+            <a class="nav-link p-4" href="#" aria-current="page">
+                <h3>DC Comics</h3>
+            </a>
+
+        </nav>
+    </header>
     <div class="container">
         <div class="row row-cols-3 g-4">
             @forelse ($comics as $comic)
@@ -18,10 +26,9 @@
                     <img src="{{$comic->thumb}}" class="card-img-top" width="100" alt="">
                     <div class="card-body">
                         <h4>{{$comic->title}}</h4>
-                        <p>{{$comic->description}} </p>
-                        <p>{{$comic->price}}</p>
-                        <p>{{$comic->series}}</p>
-                        <p>{{$comic->title}}</p>
+                        <h5>{{$comic->price}}€</h5>
+                        <h5>{{$comic->series}}</h5>
+                        <h5>{{$comic->type}}</h5>
                     </div>
                 </div>
             </div>
