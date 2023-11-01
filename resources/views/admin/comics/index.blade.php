@@ -29,7 +29,7 @@
                     <td>{{ $comic->title }}</td>
 
                     <td>
-
+                        <a class="btn" href="{{ route('comics.show', $comic->id) }}">More</a>
                         <a class="btn btn-warning" href="#">Edit</a>
                         <a class="btn btn-danger" href="#">Delete</a>
                     </td>

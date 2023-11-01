@@ -18,8 +18,20 @@
                 <input type="text" class="form-control" name="title" id="title" aria-describedby="helpTitle" placeholder="Insert title">
             </div>
             <div class="mb-3">
+                <label for="description" class="form-label">description</label>
+                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert price">
+            </div>
+            <div class="mb-3">
+                <label for="Series" class="form-label">Series</label>
+                <input type="text" class="form-control" name="Series" id="Series" aria-describedby="helpprice" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="sale_date" class="form-label">sale_date</label>
+                <input type="text" class="form-control" name="sale_date" id="sale_date" aria-describedby="helpprice" placeholder="">
+            </div>
+            <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpprice" placeholder="Insert price">
+                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpprice" placeholder="">
             </div>
             <div class="mb-3">
                 <label for="thumb" class="form-label">Choose file</label>
