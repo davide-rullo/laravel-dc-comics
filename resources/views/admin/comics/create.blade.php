@@ -11,7 +11,7 @@
 <body>
     <div class="container p-3">
         <h2 class="text-center pb-3">Add a Comic</h2>
-        <form action="{{ route('comics.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -19,11 +19,11 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">description</label>
-                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert price">
+                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert description">
             </div>
             <div class="mb-3">
-                <label for="Series" class="form-label">Series</label>
-                <input type="text" class="form-control" name="Series" id="Series" aria-describedby="helpprice" placeholder="">
+                <label for="series" class="form-label">series</label>
+                <input type="text" class="form-control" name="series" id="series" aria-describedby="helpprice" placeholder="">
             </div>
             <div class="mb-3">
                 <label for="sale_date" class="form-label">sale_date</label>
@@ -32,6 +32,18 @@
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="text" class="form-control" name="price" id="price" aria-describedby="helpprice" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="artists" class="form-label">artists</label>
+                <input type="text" class="form-control" name="artists" id="artists" aria-describedby="helpprice" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="writers" class="form-label">writers</label>
+                <input type="text" class="form-control" name="writers" id="writers" aria-describedby="helpprice" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">type</label>
+                <input type="text" class="form-control" name="type" id="type" aria-describedby="helpprice" placeholder="">
             </div>
             <div class="mb-3">
                 <label for="thumb" class="form-label">Choose file</label>

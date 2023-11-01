@@ -38,7 +38,15 @@ class ComicController extends Controller
         }
 
         $new_comic->title = $request->title;
+        $new_comic->description = $request->description;
         $new_comic->price = $request->price;
+        $new_comic->series = $request->series;
+        $new_comic->sale_date = $request->sale_date;
+        $new_comic->type = $request->type;
+        $new_comic->artists = $request->artists;
+        $new_comic->writers = $request->writers;
+
+
         $new_comic->save();
 
         return view('admin.comics.create');
