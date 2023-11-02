@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-</head>
-
-<body>
-    <div class="card">
-
-        <div class="card-body">
-            <h3 class="text-center">Comic #{{ $comic->id }}</h3>
-            <h3 class="text-center">Comic #{{ $comic->title }}</h3>
-            <h3 class="text-center">Comic #{{ $comic->description }}</h3>
-            <h3 class="text-center">Comic #{{ $comic->price }}</h3>
-
+@section('content')
+<div class="container p-5">
+    <div class="row">
+        <div class="col">
+            <div class="card d-flex align-items-center">
+                @if (str_contains($comic->thumb, 'http'))
+                <img class="card-img-top" style="width: 300px;" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                @else
+                <img class="card-img-top" style="width: 300px;" src="{{ asset('storage/' . $comic->thumb) }}">
+                @endif
+                <div class="card-body">
+                    <h4>{{$comic->title}}</h4>
+                    <h5>{{$comic->price}}€</h5>
+                    <h5>{{$comic->series}}</h5>
+                    <h5>{{$comic->type}}</h5>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-</body>
-
-</html>
+@stop
