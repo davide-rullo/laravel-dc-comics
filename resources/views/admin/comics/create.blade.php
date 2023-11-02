@@ -11,7 +11,7 @@
 <body>
     <div class="container p-3">
         <h2 class="text-center pb-3">Add a Comic</h2>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('comics.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>

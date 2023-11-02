@@ -23,7 +23,15 @@
             @forelse ($comics as $comic)
             <div class="col">
                 <div class="card h-100">
-                    <img src="{{$comic->thumb}}" class="card-img-top" width="100" alt="">
+
+                    @if (str_contains($comic->thumb, 'http'))
+                    <img class="card-img-top" style="width: 100;" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                    @else
+                    <img class="card-img-top" style="width: 100;" src="{{ asset('storage/' . $comic->thumb) }}">
+                    @endif
+
+
+
                     <div class="card-body">
                         <h4>{{$comic->title}}</h4>
                         <h5>{{$comic->price}}€</h5>

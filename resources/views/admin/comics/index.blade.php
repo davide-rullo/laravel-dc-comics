@@ -25,6 +25,13 @@
             <tbody>
                 @forelse ($comics as $comic)
                 <tr class="text-center">
+
+                    @if (str_contains($comic->thumb, 'http'))
+                    <td><img style="width:50px" src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
+                    @else
+                    <td><img style="width:50px" src="{{ asset('storage/' . $comic->thumb) }}"></td>
+                    @endif
+
                     <td>{{ $comic->id }}</td>
                     <td>{{ $comic->title }}</td>
 
