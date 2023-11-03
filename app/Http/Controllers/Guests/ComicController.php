@@ -86,7 +86,7 @@ class ComicController extends Controller
             Storage::delete($comic->thumb);
 
             $newImageFile = $request->thumb;
-            $path = Storage::put('sabers_images', $newImageFile);
+            $path = Storage::put('comics_images', $newImageFile);
             $data['thumb'] = $path;
         }
 
@@ -101,6 +101,11 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        if (!is_null($comic->thumb)) {
+            Storage::delete($comic->thumb);
+        }
+
+        $comic->delete();
+        return to_route('comics.index')->with('message', 'Modifica avvenuta con successo');;
     }
 }
