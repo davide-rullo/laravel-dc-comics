@@ -40,10 +40,10 @@ class ComicController extends Controller
         //cambio con il mass assignment
 
         // $new_comic = new Comic();
-        $data = $request->all();
+        $valid_data = $request->all();
         if ($request->has('thumb')) {
             $file_path = Storage::put('comics_images', $request->thumb);
-            $data['thumb'] = $file_path;
+            $valid_data['thumb'] = $file_path;
         }
 
         // $new_comic->title = $request->title;
@@ -60,7 +60,7 @@ class ComicController extends Controller
 
         // return view('admin.comics.create');
 
-        $comic = Comic::create($data);
+        $comic = Comic::create($valid_data);
         return to_route('comics.show', $comic);
     }
 
