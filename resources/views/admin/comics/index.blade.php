@@ -26,6 +26,7 @@
         <thead>
             <tr class="text-center">
                 <th scope="col">ID</th>
+
                 <th scope="col">Title</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -40,7 +41,12 @@
                 <td><img style="width:50px" src="{{ asset('storage/' . $comic->thumb) }}"></td>
                 @endif
 
-                <td>{{ $comic->id }}</td>
+                <td>{{ $comic->id }}
+                    @if($comic->trashed())
+                    Trashed product
+                    @endif
+                </td>
+
                 <td>{{ $comic->title }}</td>
 
                 <td>
