@@ -4,6 +4,17 @@
 
 
 <div class="container p-3">
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <h2 class="text-center pb-3">Edit saber number: {{$comic->id}}</h2>
     <form action="{{ route('comics.update', $comic) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -14,7 +25,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">description</label>
-            <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert description" value="{{$comic->description}}">
+            <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert description" required value="{{ old('description', $comic->description) }}">
         </div>
         <div class="mb-3">
             <label for="series" class="form-label">series</label>

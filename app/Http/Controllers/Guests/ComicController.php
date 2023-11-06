@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 
 class ComicController extends Controller
 {
@@ -28,18 +30,20 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
 
-        $valid_data = $request->validate([
+        /* validazione all'interno del controller
+       $valid_data = $request->validate([
             'title' => 'required|min:3',
 
-        ]);
+        ]); */
 
 
         //cambio con il mass assignment
 
         // $new_comic = new Comic();
+
         $valid_data = $request->all();
         if ($request->has('thumb')) {
             $file_path = Storage::put('comics_images', $request->thumb);
@@ -83,9 +87,9 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        $valid_data = $request->validated();
 
         if ($request->has('thumb') && $comic->thumb) {
 
@@ -94,12 +98,12 @@ class ComicController extends Controller
 
             $newImageFile = $request->thumb;
             $path = Storage::put('comics_images', $newImageFile);
-            $data['thumb'] = $path;
+            $valid_data['thumb'] = $path;
         }
 
 
 
-        $comic->update($data);
+        $comic->update($valid_data);
         return to_route('comics.show', $comic);
     }
 

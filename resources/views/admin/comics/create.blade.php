@@ -28,31 +28,31 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">description</label>
-                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert description">
+                <input type="text" class="form-control" name="description" id="description" aria-describedby="helpprice" placeholder="Insert description" value="{{old('description')}}">
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">series</label>
-                <input type="text" class="form-control" name="series" id="series" aria-describedby="helpprice" placeholder="">
+                <input type="text" class="form-control" name="series" id="series" aria-describedby="helpprice" placeholder="" value="{{old('series')}}">
             </div>
             <div class="mb-3">
                 <label for="sale_date" class="form-label">sale_date</label>
-                <input type="text" class="form-control" name="sale_date" id="sale_date" aria-describedby="helpprice" placeholder="">
+                <input type="text" class="form-control" name="sale_date" id="sale_date" aria-describedby="helpprice" placeholder="" value="{{old('sale_date')}}">
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpprice" placeholder="">
+                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpprice" placeholder="" value="{{old('price')}}">
             </div>
             <div class="mb-3">
                 <label for="artists" class="form-label">artists</label>
-                <input type="text" class="form-control" name="artists" id="artists" aria-describedby="helpprice" placeholder="">
+                <input type="text" class="form-control" name="artists" id="artists" aria-describedby="helpprice" placeholder="" value="{{old('artists')}}">
             </div>
             <div class="mb-3">
                 <label for="writers" class="form-label">writers</label>
-                <input type="text" class="form-control" name="writers" id="writers" aria-describedby="helpprice" placeholder="">
+                <input type="text" class="form-control" name="writers" id="writers" aria-describedby="helpprice" placeholder="" value="{{old('writers')}}">
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">type</label>
-                <input type="text" class="form-control" name="type" id="type" aria-describedby="helpprice" placeholder="">
+                <input type="text" class="form-control" name="type" id="type" aria-describedby="helpprice" placeholder="" value="{{old('type')}}">
             </div>
             <div class="mb-3">
                 <label for="thumb" class="form-label">Choose file</label>
