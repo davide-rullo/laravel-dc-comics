@@ -30,6 +30,13 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $valid_data = $request->validate([
+            'title' => 'required|min:3',
+
+        ]);
+
+
         //cambio con il mass assignment
 
         // $new_comic = new Comic();
